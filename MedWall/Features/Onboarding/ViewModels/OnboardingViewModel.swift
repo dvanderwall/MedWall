@@ -45,13 +45,19 @@ class OnboardingViewModel: ObservableObject {
     }
     
     func completeOnboarding() {
+        Logger.shared.log("OnboardingViewModel: Starting completion")
         saveUserPreferences()
         
         withAnimation(.easeInOut(duration: 0.5)) {
             isCompleted = true
         }
         
-        Logger.shared.log("Onboarding completed successfully")
+        Logger.shared.log("OnboardingViewModel: Completion finished, isCompleted = \(isCompleted)")
+    }
+    
+    // Public method to allow external classes to save preferences
+    func saveUserPreferencesPublic() {
+        saveUserPreferences()
     }
     
     private func saveUserPreferences() {

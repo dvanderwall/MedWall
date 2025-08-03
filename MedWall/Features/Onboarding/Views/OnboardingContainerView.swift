@@ -43,16 +43,19 @@ struct OnboardingContainerView: View {
                 ShortcutsSetupView(viewModel: viewModel)
                     .tag(OnboardingStep.shortcutsSetup)
                 
-                FirstWallpaperView(viewModel: viewModel)
+                FirstWallpaperView(viewModel: viewModel, appConfiguration: appConfiguration)
                     .tag(OnboardingStep.firstWallpaper)
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .animation(.easeInOut(duration: 0.3), value: viewModel.currentStep)
+            .onAppear {
+                Logger.shared.log("OnboardingContainerView appeared - current step: \(viewModel.currentStep.rawValue)")
+            }
         }
-        .onReceive(viewModel.$isCompleted) { isCompleted in
+        .onChange(of: viewModel.isCompleted) { _, isCompleted in
+            Logger.shared.log("OnboardingContainerView: Detected completion change: \(isCompleted)")
             if isCompleted {
-                appConfiguration.hasCompletedOnboarding = true
-                UserDefaults.standard.set(true, forKey: "HasCompletedOnboarding")
+                Logger.shared.log("OnboardingContainerView: Completion detected, but AppConfiguration should already be updated")
             }
         }
     }

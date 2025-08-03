@@ -6,9 +6,21 @@ import Combine
 
 @MainActor
 class AppConfiguration: ObservableObject {
-    @Published var isFirstLaunch: Bool = true
-    @Published var hasCompletedOnboarding: Bool = false
-    @Published var isLoading: Bool = true
+    @Published var isFirstLaunch: Bool = true {
+        didSet {
+            Logger.shared.log("AppConfiguration: isFirstLaunch changed to \(isFirstLaunch)")
+        }
+    }
+    @Published var hasCompletedOnboarding: Bool = false {
+        didSet {
+            Logger.shared.log("AppConfiguration: hasCompletedOnboarding changed to \(hasCompletedOnboarding)")
+        }
+    }
+    @Published var isLoading: Bool = true {
+        didSet {
+            Logger.shared.log("AppConfiguration: isLoading changed to \(isLoading)")
+        }
+    }
     
     private let userDefaults = UserDefaults.standard
     private let coreDataStack = CoreDataStack.shared
@@ -51,6 +63,14 @@ class AppConfiguration: ObservableObject {
         
         // Initialize shortcuts service (temporarily disabled due to intent issues)
         ShortcutsService.shared.setupDefaultShortcuts()
+    }
+    
+    func completeOnboarding() {
+        Logger.shared.log("AppConfiguration: Completing onboarding")
+        hasCompletedOnboarding = true
+        userDefaults.set(true, forKey: "HasCompletedOnboarding")
+        userDefaults.synchronize() // Force synchronization
+        Logger.shared.log("AppConfiguration: Onboarding completed, saved to UserDefaults")
     }
     
     private func setupInitialData() async {

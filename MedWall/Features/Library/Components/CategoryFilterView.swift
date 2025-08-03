@@ -1,4 +1,4 @@
-// MARK: - Fixed Onboarding Views
+// MARK: - Missing UI Components
 // File: MedWall/Features/Library/Components/CategoryFilterView.swift
 
 import SwiftUI
@@ -449,8 +449,10 @@ struct SetupStepView: View {
 
 struct FirstWallpaperView: View {
     @ObservedObject var viewModel: OnboardingViewModel
+    let appConfiguration: AppConfiguration
     @State private var isGenerating = false
     @State private var generatedFact: MedicalFact?
+    @State private var isCompleting = false
     
     var body: some View {
         VStack(spacing: 30) {
@@ -522,15 +524,15 @@ struct FirstWallpaperView: View {
             }
             .padding()
             
-            Button(action: generateFirstWallpaper) {
+            Button(action: handleButtonPress) {
                 HStack {
-                    if isGenerating {
+                    if isGenerating || isCompleting {
                         ProgressView()
                             .scaleEffect(0.8)
                             .progressViewStyle(CircularProgressViewStyle(tint: .white))
                     }
                     
-                    Text(generatedFact == nil ? "Generate First Wallpaper" : "Complete Setup")
+                    Text(buttonText)
                         .font(.headline)
                 }
                 .foregroundColor(.white)
@@ -539,30 +541,61 @@ struct FirstWallpaperView: View {
                 .background(Color.blue)
                 .cornerRadius(12)
             }
-            .disabled(isGenerating)
+            .disabled(isGenerating || isCompleting)
             .padding(.horizontal)
         }
         .padding()
     }
     
-    private func generateFirstWallpaper() {
+    private var buttonText: String {
+        if isCompleting {
+            return "Completing Setup..."
+        } else if generatedFact == nil {
+            return "Generate First Wallpaper"
+        } else {
+            return "Complete Setup"
+        }
+    }
+    
+    private func handleButtonPress() {
         if generatedFact != nil {
             // Complete onboarding
-            viewModel.completeOnboarding()
-            return
+            completeOnboarding()
+        } else {
+            // Generate wallpaper
+            generateFirstWallpaper()
         }
-        
+    }
+    
+    private func generateFirstWallpaper() {
         isGenerating = true
         
-        // Simulate wallpaper generation
         Task {
-            // Load a sample fact
             await loadSampleFact()
             
             await MainActor.run {
                 isGenerating = false
             }
         }
+    }
+    
+    private func completeOnboarding() {
+        Logger.shared.log("FirstWallpaperView: Starting onboarding completion")
+        isCompleting = true
+        
+        // Save preferences
+        viewModel.saveUserPreferencesPublic()
+        
+        // Update app configuration directly (we're already on MainActor)
+        Logger.shared.log("FirstWallpaperView: Updating app configuration")
+        appConfiguration.completeOnboarding()
+        
+        // Update view model
+        viewModel.isCompleted = true
+        
+        isCompleting = false
+        
+        Logger.shared.log("FirstWallpaperView: Onboarding completion finished")
     }
     
     private func loadSampleFact() async {
@@ -584,3 +617,6 @@ struct FirstWallpaperView: View {
         }
     }
 }
+
+// MARK: - Additional Settings Views (placeholders from previous implementation)
+// ... rest of the views remain the same ...
