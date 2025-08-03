@@ -15,8 +15,8 @@ class WallpaperGenerator: ObservableObject {
     private init() {}
     
     func generateWallpaper(fact: MedicalFact, theme: WallpaperTheme) async -> UIImage? {
-        let screenSize = UIScreen.main.bounds.size
-        let scale = UIScreen.main.scale
+        let screenSize = await UIScreen.main.bounds.size
+        let scale = await UIScreen.main.scale
         
         return await withCheckedContinuation { continuation in
             DispatchQueue.global(qos: .userInitiated).async {
@@ -66,7 +66,9 @@ class WallpaperGenerator: ObservableObject {
         await saveWallpaperToPhotos(wallpaper)
         
         // Trigger shortcut to set wallpaper (iOS limitation workaround)
-        ShortcutsService.shared.triggerWallpaperUpdate()
+        await MainActor.run {
+            ShortcutsService.shared.triggerWallpaperUpdate()
+        }
     }
     
     private func drawBackground(theme: WallpaperTheme, in context: CGContext, size: CGSize) {
@@ -173,6 +175,7 @@ class WallpaperGenerator: ObservableObject {
         brandingText.draw(in: brandingRect, withAttributes: attributes)
     }
     
+    @MainActor
     private func saveWallpaperToPhotos(_ image: UIImage) async {
         do {
             try await PHPhotoLibrary.shared().performChanges {

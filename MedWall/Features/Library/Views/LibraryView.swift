@@ -12,7 +12,7 @@ struct LibraryView: View {
         NavigationView {
             VStack(spacing: 0) {
                 // Search Bar
-                SearchBar(text: $searchText, onSearchButtonClicked: {
+                SearchBarView(text: $searchText, onSearchButtonClicked: {
                     Task {
                         await viewModel.searchFacts(query: searchText)
                     }
@@ -64,6 +64,11 @@ struct LibraryView: View {
             }
             .sheet(item: $viewModel.selectedFact) { fact in
                 FactDetailView(fact: fact)
+            }
+            .onChange(of: searchText) { oldValue, newValue in
+                Task {
+                    await viewModel.searchFacts(query: newValue)
+                }
             }
         }
         .onAppear {

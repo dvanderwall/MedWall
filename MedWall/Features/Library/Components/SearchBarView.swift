@@ -3,6 +3,33 @@
 
 import SwiftUI
 
+struct SearchBarView: View {
+    @Binding var text: String
+    var onSearchButtonClicked: () -> Void
+    
+    var body: some View {
+        HStack {
+            Image(systemName: "magnifyingglass")
+                .foregroundColor(.secondary)
+            
+            TextField("Search medical facts...", text: $text)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .onSubmit {
+                    onSearchButtonClicked()
+                }
+            
+            if !text.isEmpty {
+                Button("Clear") {
+                    text = ""
+                }
+                .foregroundColor(.blue)
+            }
+        }
+        .padding(.horizontal)
+    }
+}
+
+// Keep the UIKit version as SearchBar for backward compatibility but fix the issues
 struct SearchBar: UIViewRepresentable {
     @Binding var text: String
     var onSearchButtonClicked: () -> Void

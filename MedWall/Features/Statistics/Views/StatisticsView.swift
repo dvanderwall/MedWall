@@ -2,7 +2,6 @@
 // File: MedWall/Features/Statistics/Views/StatisticsView.swift
 
 import SwiftUI
-import Charts
 
 struct StatisticsView: View {
     @StateObject private var viewModel = StatisticsViewModel()

@@ -26,17 +26,23 @@ class ShortcutsService: NSObject, ObservableObject {
         let intent = GenerateWallpaperIntent()
         intent.suggestedInvocationPhrase = "Update my medical wallpaper"
         
-        let shortcut = INShortcut(intent: intent)
-        
-        INVoiceShortcutCenter.shared.setShortcutSuggestions([shortcut])
+        // Handle the optional INShortcut properly
+        if let shortcut = INShortcut(intent: intent) {
+            INVoiceShortcutCenter.shared.setShortcutSuggestions([shortcut])
+        } else {
+            Logger.shared.log("Failed to create wallpaper shortcut", level: .error)
+        }
     }
     
     private func setupGetRandomFactShortcut() {
         let intent = GetRandomFactIntent()
         intent.suggestedInvocationPhrase = "Tell me a medical fact"
         
-        let shortcut = INShortcut(intent: intent)
-        
-        INVoiceShortcutCenter.shared.setShortcutSuggestions([shortcut])
+        // Handle the optional INShortcut properly
+        if let shortcut = INShortcut(intent: intent) {
+            INVoiceShortcutCenter.shared.setShortcutSuggestions([shortcut])
+        } else {
+            Logger.shared.log("Failed to create random fact shortcut", level: .error)
+        }
     }
 }
