@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		39D73A742E3FC5D800B46D03 /* MedWallApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D73A732E3FC5D800B46D03 /* MedWallApp.swift */; };
+		39D73A762E3FC5D800B46D03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D73A752E3FC5D800B46D03 /* ContentView.swift */; };
+		39D73A782E3FC5D900B46D03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39D73A772E3FC5D900B46D03 /* Assets.xcassets */; };
+		39D73A7B2E3FC5D900B46D03 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39D73A7A2E3FC5D900B46D03 /* Preview Assets.xcassets */; };
+		39D73A7D2E3FC5D900B46D03 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D73A7C2E3FC5D900B46D03 /* Persistence.swift */; };
+		39D73A802E3FC5D900B46D03 /* MedWall.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 39D73A7E2E3FC5D900B46D03 /* MedWall.xcdatamodeld */; };
+		39D73A8A2E3FC5D900B46D03 /* MedWallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D73A892E3FC5D900B46D03 /* MedWallTests.swift */; };
+		39D73A942E3FC5D900B46D03 /* MedWallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D73A932E3FC5D900B46D03 /* MedWallUITests.swift */; };
+		39D73A962E3FC5D900B46D03 /* MedWallUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D73A952E3FC5D900B46D03 /* MedWallUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		39D73A862E3FC5D900B46D03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39D73A682E3FC5D800B46D03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39D73A6F2E3FC5D800B46D03;
+			remoteInfo = MedWall;
+		};
+		39D73A902E3FC5D900B46D03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39D73A682E3FC5D800B46D03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39D73A6F2E3FC5D800B46D03;
+			remoteInfo = MedWall;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		39D73A702E3FC5D800B46D03 /* MedWall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedWall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		39D73A732E3FC5D800B46D03 /* MedWallApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedWallApp.swift; sourceTree = "<group>"; };
+		39D73A752E3FC5D800B46D03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		39D73A772E3FC5D900B46D03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		39D73A7A2E3FC5D900B46D03 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		39D73A7C2E3FC5D900B46D03 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		39D73A7F2E3FC5D900B46D03 /* MedWall.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MedWall.xcdatamodel; sourceTree = "<group>"; };
+		39D73A852E3FC5D900B46D03 /* MedWallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedWallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		39D73A892E3FC5D900B46D03 /* MedWallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedWallTests.swift; sourceTree = "<group>"; };
+		39D73A8F2E3FC5D900B46D03 /* MedWallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedWallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		39D73A932E3FC5D900B46D03 /* MedWallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedWallUITests.swift; sourceTree = "<group>"; };
+		39D73A952E3FC5D900B46D03 /* MedWallUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedWallUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		39D73A6D2E3FC5D800B46D03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39D73A822E3FC5D900B46D03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39D73A8C2E3FC5D900B46D03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		39D73A672E3FC5D800B46D03 = {
+			isa = PBXGroup;
+			children = (
+				39D73A722E3FC5D800B46D03 /* MedWall */,
+				39D73A882E3FC5D900B46D03 /* MedWallTests */,
+				39D73A922E3FC5D900B46D03 /* MedWallUITests */,
+				39D73A712E3FC5D800B46D03 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		39D73A712E3FC5D800B46D03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39D73A702E3FC5D800B46D03 /* MedWall.app */,
+				39D73A852E3FC5D900B46D03 /* MedWallTests.xctest */,
+				39D73A8F2E3FC5D900B46D03 /* MedWallUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		39D73A722E3FC5D800B46D03 /* MedWall */ = {
+			isa = PBXGroup;
+			children = (
+				39D73A732E3FC5D800B46D03 /* MedWallApp.swift */,
+				39D73A752E3FC5D800B46D03 /* ContentView.swift */,
+				39D73A772E3FC5D900B46D03 /* Assets.xcassets */,
+				39D73A7C2E3FC5D900B46D03 /* Persistence.swift */,
+				39D73A7E2E3FC5D900B46D03 /* MedWall.xcdatamodeld */,
+				39D73A792E3FC5D900B46D03 /* Preview Content */,
+			);
+			path = MedWall;
+			sourceTree = "<group>";
+		};
+		39D73A792E3FC5D900B46D03 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				39D73A7A2E3FC5D900B46D03 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		39D73A882E3FC5D900B46D03 /* MedWallTests */ = {
+			isa = PBXGroup;
+			children = (
+				39D73A892E3FC5D900B46D03 /* MedWallTests.swift */,
+			);
+			path = MedWallTests;
+			sourceTree = "<group>";
+		};
+		39D73A922E3FC5D900B46D03 /* MedWallUITests */ = {
+			isa = PBXGroup;
+			children = (
+				39D73A932E3FC5D900B46D03 /* MedWallUITests.swift */,
+				39D73A952E3FC5D900B46D03 /* MedWallUITestsLaunchTests.swift */,
+			);
+			path = MedWallUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		39D73A6F2E3FC5D800B46D03 /* MedWall */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39D73A992E3FC5D900B46D03 /* Build configuration list for PBXNativeTarget "MedWall" */;
+			buildPhases = (
+				39D73A6C2E3FC5D800B46D03 /* Sources */,
+				39D73A6D2E3FC5D800B46D03 /* Frameworks */,
+				39D73A6E2E3FC5D800B46D03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MedWall;
+			productName = MedWall;
+			productReference = 39D73A702E3FC5D800B46D03 /* MedWall.app */;
+			productType = "com.apple.product-type.application";
+		};
+		39D73A842E3FC5D900B46D03 /* MedWallTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39D73A9C2E3FC5D900B46D03 /* Build configuration list for PBXNativeTarget "MedWallTests" */;
+			buildPhases = (
+				39D73A812E3FC5D900B46D03 /* Sources */,
+				39D73A822E3FC5D900B46D03 /* Frameworks */,
+				39D73A832E3FC5D900B46D03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				39D73A872E3FC5D900B46D03 /* PBXTargetDependency */,
+			);
+			name = MedWallTests;
+			productName = MedWallTests;
+			productReference = 39D73A852E3FC5D900B46D03 /* MedWallTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		39D73A8E2E3FC5D900B46D03 /* MedWallUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39D73A9F2E3FC5D900B46D03 /* Build configuration list for PBXNativeTarget "MedWallUITests" */;
+			buildPhases = (
+				39D73A8B2E3FC5D900B46D03 /* Sources */,
+				39D73A8C2E3FC5D900B46D03 /* Frameworks */,
+				39D73A8D2E3FC5D900B46D03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				39D73A912E3FC5D900B46D03 /* PBXTargetDependency */,
+			);
+			name = MedWallUITests;
+			productName = MedWallUITests;
+			productReference = 39D73A8F2E3FC5D900B46D03 /* MedWallUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		39D73A682E3FC5D800B46D03 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					39D73A6F2E3FC5D800B46D03 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					39D73A842E3FC5D900B46D03 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 39D73A6F2E3FC5D800B46D03;
+					};
+					39D73A8E2E3FC5D900B46D03 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 39D73A6F2E3FC5D800B46D03;
+					};
+				};
+			};
+			buildConfigurationList = 39D73A6B2E3FC5D800B46D03 /* Build configuration list for PBXProject "MedWall" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 39D73A672E3FC5D800B46D03;
+			productRefGroup = 39D73A712E3FC5D800B46D03 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				39D73A6F2E3FC5D800B46D03 /* MedWall */,
+				39D73A842E3FC5D900B46D03 /* MedWallTests */,
+				39D73A8E2E3FC5D900B46D03 /* MedWallUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		39D73A6E2E3FC5D800B46D03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39D73A7B2E3FC5D900B46D03 /* Preview Assets.xcassets in Resources */,
+				39D73A782E3FC5D900B46D03 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39D73A832E3FC5D900B46D03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39D73A8D2E3FC5D900B46D03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		39D73A6C2E3FC5D800B46D03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39D73A7D2E3FC5D900B46D03 /* Persistence.swift in Sources */,
+				39D73A762E3FC5D800B46D03 /* ContentView.swift in Sources */,
+				39D73A802E3FC5D900B46D03 /* MedWall.xcdatamodeld in Sources */,
+				39D73A742E3FC5D800B46D03 /* MedWallApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39D73A812E3FC5D900B46D03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39D73A8A2E3FC5D900B46D03 /* MedWallTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39D73A8B2E3FC5D900B46D03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39D73A942E3FC5D900B46D03 /* MedWallUITests.swift in Sources */,
+				39D73A962E3FC5D900B46D03 /* MedWallUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		39D73A872E3FC5D900B46D03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39D73A6F2E3FC5D800B46D03 /* MedWall */;
+			targetProxy = 39D73A862E3FC5D900B46D03 /* PBXContainerItemProxy */;
+		};
+		39D73A912E3FC5D900B46D03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39D73A6F2E3FC5D800B46D03 /* MedWall */;
+			targetProxy = 39D73A902E3FC5D900B46D03 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		39D73A972E3FC5D900B46D03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		39D73A982E3FC5D900B46D03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		39D73A9A2E3FC5D900B46D03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MedWall/Preview Content\"";
+				DEVELOPMENT_TEAM = ZSH7X3HU3J;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidvanderwall.MedWall.MedWall;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		39D73A9B2E3FC5D900B46D03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MedWall/Preview Content\"";
+				DEVELOPMENT_TEAM = ZSH7X3HU3J;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidvanderwall.MedWall.MedWall;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		39D73A9D2E3FC5D900B46D03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZSH7X3HU3J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidvanderwall.MedWall.MedWallTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MedWall.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MedWall";
+			};
+			name = Debug;
+		};
+		39D73A9E2E3FC5D900B46D03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZSH7X3HU3J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidvanderwall.MedWall.MedWallTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MedWall.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MedWall";
+			};
+			name = Release;
+		};
+		39D73AA02E3FC5D900B46D03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZSH7X3HU3J;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidvanderwall.MedWall.MedWallUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MedWall;
+			};
+			name = Debug;
+		};
+		39D73AA12E3FC5D900B46D03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZSH7X3HU3J;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidvanderwall.MedWall.MedWallUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MedWall;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		39D73A6B2E3FC5D800B46D03 /* Build configuration list for PBXProject "MedWall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39D73A972E3FC5D900B46D03 /* Debug */,
+				39D73A982E3FC5D900B46D03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39D73A992E3FC5D900B46D03 /* Build configuration list for PBXNativeTarget "MedWall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39D73A9A2E3FC5D900B46D03 /* Debug */,
+				39D73A9B2E3FC5D900B46D03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39D73A9C2E3FC5D900B46D03 /* Build configuration list for PBXNativeTarget "MedWallTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39D73A9D2E3FC5D900B46D03 /* Debug */,
+				39D73A9E2E3FC5D900B46D03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		39D73A9F2E3FC5D900B46D03 /* Build configuration list for PBXNativeTarget "MedWallUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39D73AA02E3FC5D900B46D03 /* Debug */,
+				39D73AA12E3FC5D900B46D03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		39D73A7E2E3FC5D900B46D03 /* MedWall.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				39D73A7F2E3FC5D900B46D03 /* MedWall.xcdatamodel */,
+			);
+			currentVersion = 39D73A7F2E3FC5D900B46D03 /* MedWall.xcdatamodel */;
+			path = MedWall.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 39D73A682E3FC5D800B46D03 /* Project object */;
+}
