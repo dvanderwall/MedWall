@@ -65,6 +65,9 @@
 		39D73B252E3FF3C800B46D03 /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D73B242E3FF3C800B46D03 /* UIKit+Extensions.swift */; };
 		39D73B272E3FF3E400B46D03 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D73B262E3FF3E400B46D03 /* Foundation+Extensions.swift */; };
 		39D73B2A2E3FF43900B46D03 /* ProgressChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D73B292E3FF43900B46D03 /* ProgressChartView.swift */; };
+		39D73B2C2E40057800B46D03 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39D73B2B2E40057800B46D03 /* GoogleService-Info.plist */; };
+		39D73B2D2E40057800B46D03 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39D73B2B2E40057800B46D03 /* GoogleService-Info.plist */; };
+		39D73B2E2E40057800B46D03 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39D73B2B2E40057800B46D03 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +146,7 @@
 		39D73B242E3FF3C800B46D03 /* UIKit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
 		39D73B262E3FF3E400B46D03 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
 		39D73B292E3FF43900B46D03 /* ProgressChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressChartView.swift; sourceTree = "<group>"; };
+		39D73B2B2E40057800B46D03 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +201,7 @@
 		39D73A722E3FC5D800B46D03 /* MedWall */ = {
 			isa = PBXGroup;
 			children = (
+				39D73B2B2E40057800B46D03 /* GoogleService-Info.plist */,
 				39D73AA72E3FC6EB00B46D03 /* Resources */,
 				39D73AA62E3FC6E200B46D03 /* Services */,
 				39D73AA52E3FC6D600B46D03 /* Shared */,
@@ -671,6 +676,7 @@
 			files = (
 				39D73A7B2E3FC5D900B46D03 /* Preview Assets.xcassets in Resources */,
 				39D73A782E3FC5D900B46D03 /* Assets.xcassets in Resources */,
+				39D73B2C2E40057800B46D03 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +684,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39D73B2D2E40057800B46D03 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,6 +692,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39D73B2E2E40057800B46D03 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
