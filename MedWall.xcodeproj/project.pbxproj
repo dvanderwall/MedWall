@@ -53,7 +53,6 @@
 		39D73B072E3FCF0700B46D03 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D73B062E3FCF0700B46D03 /* EmptyStateView.swift */; };
 		39D73B092E3FCF2100B46D03 /* StatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D73B082E3FCF2100B46D03 /* StatCardView.swift */; };
 		39D73B0C2E3FCF5300B46D03 /* MedicalFactEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D73B0B2E3FCF5300B46D03 /* MedicalFactEntity+CoreDataClass.swift */; };
-		39D73B102E3FCFA900B46D03 /* GenerateWallpaperIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D73B0F2E3FCFA900B46D03 /* GenerateWallpaperIntent.swift */; };
 		39D73B122E3FCFCE00B46D03 /* BackgroundImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D73B112E3FCFCE00B46D03 /* BackgroundImageManager.swift */; };
 		39D73B162E3FDA2E00B46D03 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 39D73B152E3FDA2E00B46D03 /* FirebaseAnalytics */; };
 		39D73B182E3FDA2E00B46D03 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 39D73B172E3FDA2E00B46D03 /* FirebaseAuth */; };
@@ -137,7 +136,6 @@
 		39D73B062E3FCF0700B46D03 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		39D73B082E3FCF2100B46D03 /* StatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCardView.swift; sourceTree = "<group>"; };
 		39D73B0B2E3FCF5300B46D03 /* MedicalFactEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MedicalFactEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		39D73B0F2E3FCFA900B46D03 /* GenerateWallpaperIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateWallpaperIntent.swift; sourceTree = "<group>"; };
 		39D73B112E3FCFCE00B46D03 /* BackgroundImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageManager.swift; sourceTree = "<group>"; };
 		39D73B1B2E3FDDD900B46D03 /* StatsOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsOverviewView.swift; sourceTree = "<group>"; };
 		39D73B1D2E3FDDF600B46D03 /* RecentFactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentFactsView.swift; sourceTree = "<group>"; };
@@ -541,7 +539,6 @@
 		39D73B0E2E3FCF9800B46D03 /* Intents */ = {
 			isa = PBXGroup;
 			children = (
-				39D73B0F2E3FCFA900B46D03 /* GenerateWallpaperIntent.swift */,
 			);
 			path = Intents;
 			sourceTree = "<group>";
@@ -741,7 +738,6 @@
 				39D73AF62E3FCDF000B46D03 /* StatisticViewModel.swift in Sources */,
 				39D73B1E2E3FDDF600B46D03 /* RecentFactsView.swift in Sources */,
 				39D73AE92E3FCCE300B46D03 /* SearchBarView.swift in Sources */,
-				39D73B102E3FCFA900B46D03 /* GenerateWallpaperIntent.swift in Sources */,
 				39D73B212E3FDE2D00B46D03 /* WallpaperPreviewView.swift in Sources */,
 				39D73AB02E3FC86D00B46D03 /* MedicalFact.swift in Sources */,
 				39D73AB62E3FC8D800B46D03 /* WallpaperTheme.swift in Sources */,

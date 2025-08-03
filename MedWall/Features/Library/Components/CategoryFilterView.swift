@@ -1,4 +1,4 @@
-// MARK: - Missing UI Components
+// MARK: - Fixed Onboarding Views
 // File: MedWall/Features/Library/Components/CategoryFilterView.swift
 
 import SwiftUI
@@ -358,6 +358,8 @@ struct DifficultyCard: View {
 }
 
 struct ShortcutsSetupView: View {
+    @ObservedObject var viewModel: OnboardingViewModel
+    
     var body: some View {
         VStack(spacing: 30) {
             VStack(spacing: 16) {
@@ -397,15 +399,15 @@ struct ShortcutsSetupView: View {
                 )
             }
             
-            Button("I'll Set This Up Later") {
-                // Continue to next step
+            Button(action: viewModel.nextStep) {
+                Text("I'll Set This Up Later")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(12)
             }
-            .font(.headline)
-            .foregroundColor(.white)
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(Color.blue)
-            .cornerRadius(12)
             .padding(.horizontal)
         }
         .padding()
@@ -447,6 +449,8 @@ struct SetupStepView: View {
 
 struct FirstWallpaperView: View {
     @ObservedObject var viewModel: OnboardingViewModel
+    @State private var isGenerating = false
+    @State private var generatedFact: MedicalFact?
     
     var body: some View {
         VStack(spacing: 30) {
@@ -469,28 +473,114 @@ struct FirstWallpaperView: View {
                 
                 VStack {
                     Spacer()
-                    Text("Sample medical fact will appear here")
-                        .font(.body)
-                        .fontWeight(.medium)
-                        .foregroundColor(.white)
-                        .multilineTextAlignment(.center)
-                        .padding()
+                    
+                    if let fact = generatedFact {
+                        VStack(spacing: 8) {
+                            Text(fact.content)
+                                .font(.body)
+                                .fontWeight(.medium)
+                                .foregroundColor(.white)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal)
+                            
+                            HStack {
+                                Text(fact.specialty.rawValue)
+                                    .font(.caption)
+                                    .foregroundColor(.white.opacity(0.8))
+                                
+                                Spacer()
+                                
+                                Text(fact.difficulty.rawValue)
+                                    .font(.caption)
+                                    .foregroundColor(.white.opacity(0.8))
+                            }
+                            .padding(.horizontal)
+                        }
+                    } else {
+                        if isGenerating {
+                            VStack(spacing: 12) {
+                                ProgressView()
+                                    .scaleEffect(1.2)
+                                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                
+                                Text("Generating your first medical fact...")
+                                    .font(.body)
+                                    .foregroundColor(.white)
+                            }
+                        } else {
+                            Text("Tap below to generate your first medical wallpaper")
+                                .font(.body)
+                                .fontWeight(.medium)
+                                .foregroundColor(.white)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal)
+                        }
+                    }
+                    
                     Spacer()
                 }
             }
             .padding()
             
-            Button(action: viewModel.completeOnboarding) {
-                Text("Generate First Wallpaper")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(12)
+            Button(action: generateFirstWallpaper) {
+                HStack {
+                    if isGenerating {
+                        ProgressView()
+                            .scaleEffect(0.8)
+                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                    }
+                    
+                    Text(generatedFact == nil ? "Generate First Wallpaper" : "Complete Setup")
+                        .font(.headline)
+                }
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.blue)
+                .cornerRadius(12)
             }
+            .disabled(isGenerating)
             .padding(.horizontal)
         }
         .padding()
+    }
+    
+    private func generateFirstWallpaper() {
+        if generatedFact != nil {
+            // Complete onboarding
+            viewModel.completeOnboarding()
+            return
+        }
+        
+        isGenerating = true
+        
+        // Simulate wallpaper generation
+        Task {
+            // Load a sample fact
+            await loadSampleFact()
+            
+            await MainActor.run {
+                isGenerating = false
+            }
+        }
+    }
+    
+    private func loadSampleFact() async {
+        // Create a sample medical fact for the preview
+        let sampleFact = MedicalFact(
+            content: "The most common cause of sudden cardiac death in young athletes is hypertrophic cardiomyopathy.",
+            category: .clinical,
+            specialty: .cardiology,
+            difficulty: viewModel.selectedDifficulty,
+            source: "Harrison's Principles of Internal Medicine",
+            tags: ["cardiology", "sudden death", "athletes"]
+        )
+        
+        // Simulate network delay
+        try? await Task.sleep(nanoseconds: 1_500_000_000) // 1.5 seconds
+        
+        await MainActor.run {
+            generatedFact = sampleFact
+        }
     }
 }

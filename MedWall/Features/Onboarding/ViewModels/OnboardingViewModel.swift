@@ -11,26 +11,47 @@ class OnboardingViewModel: ObservableObject {
     @Published var isCompleted = false
     
     func nextStep() {
-        if let nextStep = OnboardingStep(rawValue: currentStep.rawValue + 1) {
-            withAnimation {
-                currentStep = nextStep
+        withAnimation(.easeInOut(duration: 0.3)) {
+            switch currentStep {
+            case .welcome:
+                currentStep = .specialtySelection
+            case .specialtySelection:
+                currentStep = .difficultySelection
+            case .difficultySelection:
+                currentStep = .shortcutsSetup
+            case .shortcutsSetup:
+                currentStep = .firstWallpaper
+            case .firstWallpaper:
+                completeOnboarding()
             }
-        } else {
-            completeOnboarding()
         }
     }
     
     func previousStep() {
-        if let previousStep = OnboardingStep(rawValue: currentStep.rawValue - 1) {
-            withAnimation {
-                currentStep = previousStep
+        withAnimation(.easeInOut(duration: 0.3)) {
+            switch currentStep {
+            case .welcome:
+                break // Can't go back from welcome
+            case .specialtySelection:
+                currentStep = .welcome
+            case .difficultySelection:
+                currentStep = .specialtySelection
+            case .shortcutsSetup:
+                currentStep = .difficultySelection
+            case .firstWallpaper:
+                currentStep = .shortcutsSetup
             }
         }
     }
     
     func completeOnboarding() {
         saveUserPreferences()
-        isCompleted = true
+        
+        withAnimation(.easeInOut(duration: 0.5)) {
+            isCompleted = true
+        }
+        
+        Logger.shared.log("Onboarding completed successfully")
     }
     
     private func saveUserPreferences() {
@@ -38,8 +59,20 @@ class OnboardingViewModel: ObservableObject {
         userProfile.selectedSpecialties = selectedSpecialties
         userProfile.preferredDifficulty = selectedDifficulty
         
-        if let data = try? JSONEncoder().encode(userProfile) {
+        do {
+            let data = try JSONEncoder().encode(userProfile)
             UserDefaults.standard.set(data, forKey: "UserProfile")
+            Logger.shared.log("User preferences saved successfully")
+        } catch {
+            Logger.shared.log("Failed to save user preferences: \(error)", level: .error)
         }
     }
+}
+
+enum OnboardingStep: Int, CaseIterable {
+    case welcome = 0
+    case specialtySelection = 1
+    case difficultySelection = 2
+    case shortcutsSetup = 3
+    case firstWallpaper = 4
 }

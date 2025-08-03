@@ -20,7 +20,9 @@ class AppConfiguration: ObservableObject {
         
         Task {
             await setupInitialData()
-            isLoading = false
+            await MainActor.run {
+                isLoading = false
+            }
         }
     }
     
@@ -31,21 +33,30 @@ class AppConfiguration: ObservableObject {
         if isFirstLaunch {
             userDefaults.set(true, forKey: "HasLaunchedBefore")
         }
+        
+        Logger.shared.log("App launch check - First launch: \(isFirstLaunch), Onboarding completed: \(hasCompletedOnboarding)")
     }
     
     private func loadUserPreferences() {
         // Load user settings from UserDefaults
+        Logger.shared.log("Loading user preferences")
     }
     
     private func initializeServices() {
-        // Initialize Firebase services, notifications, etc.
+        // Initialize services
+        Logger.shared.log("Initializing services")
+        
+        // Initialize notification service
         NotificationService.shared.requestPermissions()
+        
+        // Initialize shortcuts service (temporarily disabled due to intent issues)
         ShortcutsService.shared.setupDefaultShortcuts()
     }
     
     private func setupInitialData() async {
         // Load initial medical facts if first launch
         if isFirstLaunch {
+            Logger.shared.log("Setting up initial data for first launch")
             await ContentRepository.shared.loadInitialFacts()
         }
     }

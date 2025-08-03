@@ -15,6 +15,8 @@ class WallpaperGenerator: ObservableObject {
     private init() {}
     
     func generateWallpaper(fact: MedicalFact, theme: WallpaperTheme) async -> UIImage? {
+        Logger.shared.log("Generating wallpaper for fact: \(fact.content.prefix(50))...")
+        
         let screenSize = await UIScreen.main.bounds.size
         let scale = await UIScreen.main.scale
         
@@ -62,7 +64,9 @@ class WallpaperGenerator: ObservableObject {
             return
         }
         
-        // Save to Photos app
+        Logger.shared.log("Wallpaper generated successfully")
+        
+        // Save to Photos app (with permission handling)
         await saveWallpaperToPhotos(wallpaper)
         
         // Trigger shortcut to set wallpaper (iOS limitation workaround)
@@ -79,11 +83,16 @@ class WallpaperGenerator: ObservableObject {
             if let color = UIColor(hex: colorHex) {
                 context.setFillColor(color.cgColor)
                 context.fill(rect)
+            } else {
+                Logger.shared.log("Invalid color hex: \(colorHex)", level: .warning)
+                context.setFillColor(UIColor.systemBlue.cgColor)
+                context.fill(rect)
             }
             
         case .gradient(let colors):
             let cgColors = colors.compactMap { UIColor(hex: $0)?.cgColor }
-            if let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(),
+            if cgColors.count >= 2,
+               let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(),
                                        colors: cgColors as CFArray,
                                        locations: nil) {
                 context.drawLinearGradient(
@@ -92,11 +101,23 @@ class WallpaperGenerator: ObservableObject {
                     end: CGPoint(x: size.width, y: size.height),
                     options: []
                 )
+            } else {
+                Logger.shared.log("Invalid gradient colors: \(colors)", level: .warning)
+                // Fallback to default gradient
+                let defaultColors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
+                if let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(),
+                                           colors: defaultColors as CFArray,
+                                           locations: nil) {
+                    context.drawLinearGradient(gradient, start: .zero, end: CGPoint(x: size.width, y: size.height), options: [])
+                }
             }
             
         case .image(let imageName):
             if let image = UIImage(named: imageName) {
                 image.draw(in: rect)
+            } else {
+                Logger.shared.log("Image not found: \(imageName)", level: .warning)
+                drawDefaultBackground(in: context, size: size)
             }
             
         case .medical(let type):
@@ -104,9 +125,22 @@ class WallpaperGenerator: ObservableObject {
         }
     }
     
+    private func drawDefaultBackground(in context: CGContext, size: CGSize) {
+        let colors = [UIColor.systemBlue.cgColor, UIColor.systemPurple.cgColor]
+        if let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(),
+                                   colors: colors as CFArray,
+                                   locations: nil) {
+            context.drawLinearGradient(
+                gradient,
+                start: .zero,
+                end: CGPoint(x: size.width, y: size.height),
+                options: []
+            )
+        }
+    }
+    
     private func drawMedicalBackground(type: WallpaperTheme.BackgroundType.MedicalImageType,
                                      in context: CGContext, size: CGSize) {
-        // Implementation for medical-themed backgrounds
         let rect = CGRect(origin: .zero, size: size)
         
         switch type {
@@ -178,12 +212,34 @@ class WallpaperGenerator: ObservableObject {
     @MainActor
     private func saveWallpaperToPhotos(_ image: UIImage) async {
         do {
-            try await PHPhotoLibrary.shared().performChanges {
-                PHAssetCreationRequest.creationRequestForAsset(from: image)
+            // Check permission status first
+            let status = PHPhotoLibrary.authorizationStatus(for: .addOnly)
+            
+            switch status {
+            case .notDetermined:
+                let newStatus = await PHPhotoLibrary.requestAuthorization(for: .addOnly)
+                if newStatus == .authorized || newStatus == .limited {
+                    try await performSave(image)
+                } else {
+                    Logger.shared.log("Photos permission denied", level: .warning)
+                }
+            case .denied, .restricted:
+                Logger.shared.log("Photos access denied or restricted", level: .warning)
+            case .authorized, .limited:
+                try await performSave(image)
+            @unknown default:
+                Logger.shared.log("Unknown photo library authorization status", level: .warning)
             }
-            Logger.shared.log("Wallpaper saved to Photos")
         } catch {
             Logger.shared.log("Failed to save wallpaper: \(error)", level: .error)
         }
+    }
+    
+    @MainActor
+    private func performSave(_ image: UIImage) async throws {
+        try await PHPhotoLibrary.shared().performChanges {
+            PHAssetCreationRequest.creationRequestForAsset(from: image)
+        }
+        Logger.shared.log("Wallpaper saved to Photos")
     }
 }
