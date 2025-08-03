@@ -135,7 +135,7 @@ class ContentRepository: ObservableObject {
             MedicalFact(
                 content: "Virchow's triad for thrombosis: endothelial injury, hypercoagulability, and venous stasis.",
                 category: .pathology,
-                specialty: .internal,
+                specialty: .internalMedicine,
                 difficulty: .medicalStudent,
                 source: "Robbins Pathologic Basis of Disease",
                 tags: ["pathology", "thrombosis", "Virchow's triad"]

@@ -1,7 +1,8 @@
-// MARK: - Additional Extensions
+// MARK: - SwiftUI Extensions
 // File: MedWall/Shared/Extensions/SwiftUI+Extensions.swift
 
 import SwiftUI
+import UIKit
 
 extension Font.Weight {
     var uiKitWeight: UIFont.Weight {

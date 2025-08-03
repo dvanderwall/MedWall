@@ -5,50 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99b56c70-d191-47c1-98b8-32678220a751" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MedWall/App/AppConfiguration.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Core/CoreData/Entities/MedicalFactEntity+CoreDataClass.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Core/Firebase/FirebaseManager.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Core/Models/Achievement.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Core/Models/MedicalFact.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Core/Models/SpacedRepetitionInfo.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Core/Models/UserProfile.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Core/Models/WallpaperTheme.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/ContentManagement/ContentRepository.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/Home/ViewModels/HomeViewModel.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/Home/Views/CurrentWallpaperPreview.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/Home/Views/HomeView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/Home/Views/QuickActionsView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/Library/Components/FactListItemView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/Library/Components/SearchBarView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/Library/ViewModels/LibraryViewModel.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/Library/ViewModels/SettingsViewModel.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/Library/Views/LibraryView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/Library/Views/SettingsView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/Main/MainTabView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/Onboarding/ViewModels/OnboardingViewModel.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/Onboarding/Views/OnboardingContainerView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/Onboarding/Views/WelcomeView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/SpacedRepetition/SpacedRepetitionEngine.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/Statistics/ViewModels/StatisticViewModel.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/Statistics/Views/StatisticsView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/WallpaperEngine/BackgroundImageManager.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/WallpaperEngine/TextLayoutEngine.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/WallpaperEngine/TypographyRenderer.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Features/WallpaperEngine/WallpaperGenerator.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Services/NotificationService.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Services/ShortcutsService.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Shared/Components/EmptyStateView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Shared/Components/Loading/LoadingView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Shared/Components/StatCardView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Shared/Extensions/Color+Extensions.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Shared/Extensions/SwiftUI+Extensions.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedWall/Shared/Utilities/Logger.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MedwallIntents/Intents/GenerateWallpaperIntent.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MedWall/Features/Library/Components/CategoryFilterView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MedWall/Features/Statistics/Components/ProgressChartView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MedWall/Shared/Extensions/Foundation+Extensions.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MedWall/Shared/Extensions/UIKit+Extensions.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MedWall.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/MedWall.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MedWall.xcodeproj/xcuserdata/davidvanderwall.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/MedWall.xcodeproj/xcuserdata/davidvanderwall.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MedWall/ContentView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MedWall/App/ContentView.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MedWall/MedWallApp.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MedWall/App/MedWallApp.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MedWall/Persistence.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MedWall/Core/CoreData/CoreDataStack.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MedWall/Core/Models/UserProfile.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MedWall/Core/Models/UserProfile.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MedWall/Core/Models/WallpaperTheme.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MedWall/Core/Models/WallpaperTheme.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MedWall/Features/ContentManagement/ContentRepository.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MedWall/Features/ContentManagement/ContentRepository.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MedWall/Features/Library/ViewModels/SettingsViewModel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MedWall/Features/Library/ViewModels/SettingsViewModel.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MedWall/Shared/Extensions/SwiftUI+Extensions.swift" beforeDir="false" afterPath="$PROJECT_DIR$/MedWall/Shared/Extensions/SwiftUI+Extensions.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,9 +24,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="30kRl4hcfIfI22ndYZVJYzk9SDZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -76,6 +42,11 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PLAIN_TEXT"
+    ]
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -94,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1754169732417</updated>
-      <workItem from="1754169735067" duration="1716000" />
+      <workItem from="1754169735067" duration="2395000" />
     </task>
     <servers />
   </component>

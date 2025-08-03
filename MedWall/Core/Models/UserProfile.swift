@@ -82,7 +82,7 @@ struct UserProfile: Codable {
         self.id = UUID()
         self.email = email
         self.name = name
-        self.selectedSpecialties = [.internal, .emergency]
+        self.selectedSpecialties = [.internalMedicine, .emergency]
         self.preferredDifficulty = .resident
         self.rotationSettings = RotationSettings()
         self.learningGoals = LearningGoals()

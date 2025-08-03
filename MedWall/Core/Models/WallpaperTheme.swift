@@ -1,4 +1,4 @@
-// MARK: - WallpaperTheme (needed for preview)
+// MARK: - WallpaperTheme
 // File: MedWall/Core/Models/WallpaperTheme.swift
 
 import SwiftUI
@@ -100,27 +100,78 @@ struct WallpaperTheme: Identifiable, Codable {
         let adaptsToDarkMode: Bool
     }
     
-    // Default theme for initial setup
-    static let defaultTheme = WallpaperTheme(
-        id: UUID(),
-        name: "Clinical Blue",
-        description: "Professional blue gradient with clean typography",
-        backgroundType: .gradient(colors: ["#2196F3", "#64B5F6"]),
-        textStyle: TextStyle(
-            fontFamily: .sanFrancisco,
-            fontSize: .medium,
-            fontWeight: .semibold,
-            textAlignment: .center,
-            lineSpacing: 1.2,
-            shadowEnabled: true
+    // Default themes array
+    static let defaultThemes: [WallpaperTheme] = [
+        WallpaperTheme(
+            id: UUID(),
+            name: "Clinical Blue",
+            description: "Professional blue gradient with clean typography",
+            backgroundType: .gradient(colors: ["#2196F3", "#64B5F6"]),
+            textStyle: TextStyle(
+                fontFamily: .sanFrancisco,
+                fontSize: .medium,
+                fontWeight: .semibold,
+                textAlignment: .center,
+                lineSpacing: 1.2,
+                shadowEnabled: true
+            ),
+            colorScheme: ColorScheme(
+                textColor: "#FFFFFF",
+                backgroundColor: "#2196F3",
+                accentColor: "#FF5722",
+                shadowColor: "#000000",
+                adaptsToDarkMode: true
+            ),
+            isUserCreated: false
         ),
-        colorScheme: ColorScheme(
-            textColor: "#FFFFFF",
-            backgroundColor: "#2196F3",
-            accentColor: "#FF5722",
-            shadowColor: "#000000",
-            adaptsToDarkMode: true
+        
+        WallpaperTheme(
+            id: UUID(),
+            name: "Medical Green",
+            description: "Calming green gradient inspired by surgical scrubs",
+            backgroundType: .gradient(colors: ["#4CAF50", "#81C784"]),
+            textStyle: TextStyle(
+                fontFamily: .sanFrancisco,
+                fontSize: .medium,
+                fontWeight: .medium,
+                textAlignment: .center,
+                lineSpacing: 1.3,
+                shadowEnabled: true
+            ),
+            colorScheme: ColorScheme(
+                textColor: "#FFFFFF",
+                backgroundColor: "#4CAF50",
+                accentColor: "#FF9800",
+                shadowColor: "#000000",
+                adaptsToDarkMode: true
+            ),
+            isUserCreated: false
         ),
-        isUserCreated: false
-    )
+        
+        WallpaperTheme(
+            id: UUID(),
+            name: "Emergency Red",
+            description: "Bold red theme for emergency medicine facts",
+            backgroundType: .gradient(colors: ["#F44336", "#E57373"]),
+            textStyle: TextStyle(
+                fontFamily: .sanFrancisco,
+                fontSize: .large,
+                fontWeight: .bold,
+                textAlignment: .center,
+                lineSpacing: 1.1,
+                shadowEnabled: true
+            ),
+            colorScheme: ColorScheme(
+                textColor: "#FFFFFF",
+                backgroundColor: "#F44336",
+                accentColor: "#FFEB3B",
+                shadowColor: "#000000",
+                adaptsToDarkMode: true
+            ),
+            isUserCreated: false
+        )
+    ]
+    
+    // Default theme for backwards compatibility
+    static let defaultTheme = defaultThemes[0]
 }

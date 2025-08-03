@@ -1,9 +1,8 @@
 // MARK: - Settings ViewModel
-// File: MedWall/Features/Settings/ViewModels/SettingsViewModel.swift
+// File: MedWall/Features/Library/ViewModels/SettingsViewModel.swift
 
 import SwiftUI
 import StoreKit
-import MessageUI
 
 @MainActor
 class SettingsViewModel: ObservableObject {
@@ -41,12 +40,10 @@ class SettingsViewModel: ObservableObject {
     }
     
     func sendFeedback() {
-        if MFMailComposeViewController.canSendMail() {
-            // Implement email feedback
-            let email = "feedback@medwall.app"
-            if let url = URL(string: "mailto:\(email)") {
-                UIApplication.shared.open(url)
-            }
+        // Simplified version without MessageUI dependency
+        let email = "feedback@medwall.app"
+        if let url = URL(string: "mailto:\(email)") {
+            UIApplication.shared.open(url)
         }
     }
     
